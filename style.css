@@ -13,20 +13,21 @@ body {
     border-bottom: 1px solid #ccc;
   }
   
-  /* Site title */
-  header h1 {
+  /* Wordmark styling */
+  .wordmark {
     font-size: 3rem;
-    margin: 0;
     font-family: 'Georgia', serif;
+    font-weight: bold;
     color: #2c2c2c;
+    margin-bottom: 1rem;
   }
   
   /* Navigation bar */
   nav {
-    margin-top: 1rem;
     display: flex;
     justify-content: center;
     gap: 3rem;
+    margin-bottom: 1rem;
   }
   
   /* Navigation links */
