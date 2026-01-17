@@ -38,11 +38,17 @@ document.getElementById("notifyForm").addEventListener("submit", function(e) {
   // Build form data
   const formData = new FormData(this);
 
-  // Send to Zoho WITHOUT redirect
+  // Send to Zoho WITHOUT redirect + DEBUG TEST
   fetch(this.action, {
     method: "POST",
     body: formData,
     mode: "no-cors"
+  })
+  .then(() => {
+    console.log("Form submitted to Zoho.");
+  })
+  .catch((error) => {
+    console.error("Zoho submission failed:", error);
   });
 
   // Swap form → thank you message
