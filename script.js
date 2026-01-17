@@ -42,7 +42,7 @@ document.getElementById("notifyForm").addEventListener("submit", function(e) {
   fetch(this.action, {
     method: "POST",
     body: formData,
-    mode: "no-cors" // required for Zoho
+    mode: "no-cors"
   });
 
   // Swap form → thank you message
