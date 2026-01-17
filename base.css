@@ -12,6 +12,13 @@
     text-align: center;
   }
   
+  /* HERO IMAGE */
+  .hero-image {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
   #home-heading {
     margin: 0;
     white-space: nowrap;
@@ -152,6 +159,12 @@
   
   /* MOBILE HERO ADJUSTMENTS */
   @media (max-width: 600px) {
+  
+    .hero-image {
+      width: 90px;
+      margin-bottom: 16px;
+    }
+  
     #home-heading {
       white-space: normal;
       font-size: 0;
