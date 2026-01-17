@@ -197,9 +197,9 @@
     .notify-btn:visited,
     .notify-btn:active,
     .notify-btn:focus {
-      color: black !important;
-      border-color: black;
-      -webkit-text-fill-color: black !important;
+      color: 333333 !important;
+      border-color: 333333;
+      -webkit-text-fill-color: 333333 !important;
     }
   
     .home-hero {
