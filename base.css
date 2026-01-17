@@ -164,16 +164,16 @@
     }
   
     .word-rebrand {
-      font-size: 40px;
+      font-size: 32px;
     }
   
     .word-coming,
     .word-soon {
-      font-size: 32px;
+      font-size: 26px;
     }
   
     .hero-subtext {
-      font-size: 16px;
+      font-size: 14px;
       max-width: 90%;
       line-height: 1.4;
       white-space: normal;
@@ -187,3 +187,4 @@
       align-items: flex-start;
     }
   }
+  
