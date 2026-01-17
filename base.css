@@ -149,3 +149,35 @@
     transform: translateY(0);
   }
 }
+@media (max-width: 600px) {
+    #home-heading {
+      white-space: normal;
+      font-size: 0;
+    }
+  
+    #home-heading span {
+      display: inline-block;
+      margin-right: 4px;
+    }
+  
+    .word-rebrand {
+      font-size: 40px;
+    }
+  
+    .word-coming,
+    .word-soon {
+      font-size: 32px;
+    }
+  
+    .hero-subtext {
+      font-size: 16px;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+  
+    .home-hero {
+      height: auto;
+      padding: 60px 0;
+    }
+  }
+  
