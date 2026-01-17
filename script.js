@@ -48,4 +48,8 @@ document.getElementById("notifyForm").addEventListener("submit", function(e) {
   // Swap form → thank you message
   document.getElementById("notifyForm").style.display = "none";
   document.getElementById("thankYouMessage").style.display = "block";
+
+  // Hide the original "Get Notified" heading + description
+  const popupHeader = document.getElementById("popupHeader");
+  if (popupHeader) popupHeader.style.display = "none";
 });
