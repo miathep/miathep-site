@@ -182,7 +182,9 @@
   
     .home-hero {
       height: auto;
+      min-height: 100vh;
       padding: 60px 0;
+      align-items: flex-start;
     }
   }
   
