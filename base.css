@@ -180,10 +180,13 @@
       padding: 0 24px;
     }
   
-    .notify-btn {
-      color: black;
+    .notify-btn,
+    .notify-btn:visited,
+    .notify-btn:active,
+    .notify-btn:focus {
+      color: black !important;
       border-color: black;
-      -webkit-text-fill-color: black;
+      -webkit-text-fill-color: black !important;
     }
   
     .home-hero {
