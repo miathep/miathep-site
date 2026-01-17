@@ -1,158 +1,161 @@
 /* HERO SECTION */
 .home-hero {
-  background-color: #f2f2f2;
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-content {
-  text-align: center;
-}
-
-#home-heading {
-  margin: 0;
-  white-space: nowrap;
-  font-size: 0; /* prevents inherited font size from affecting spans */
-}
-
-#home-heading span {
-  display: inline-block;
-}
-
-/* HERO WORDS */
-.word-rebrand {
-  font-family: 'Red Rose', serif;
-  font-weight: 700;
-  font-size: 60px;
-  margin-right: 8px;
-}
-
-.word-coming,
-.word-soon {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 50px;
-}
-
-.word-coming {
-  margin-right: 6px;
-}
-
-/* SUBTEXT */
-.hero-subtext {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  margin-top: 10px;
-  line-height: 1.4;
-  display: block;
-  width: 100%;
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* NOTIFY BUTTON */
-.notify-btn {
-  margin-top: 20px;
-  padding: 12px 28px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  border: 1px solid black;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.2s ease;
-  letter-spacing: 1px;
-}
-
-.notify-btn:hover {
-  background-color: black;
-  color: white;
-}
-
-/* POPUP OVERLAY */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-/* POPUP BOX */
-.popup-box {
-  background: white;
-  padding: 30px 40px;
-  border-radius: 6px;
-  text-align: center;
-  width: 320px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  animation: fadeIn 0.25s ease-out;
-}
-
-.popup-box h2 {
-  font-family: 'Red Rose', serif;
-  margin-bottom: 10px;
-}
-
-.popup-box p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-/* FORM INPUT */
-.popup-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* BUTTONS */
-.popup-submit,
-.popup-close {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  margin: 5px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.popup-submit {
-  background: black;
-  color: white;
-}
-
-.popup-close {
-  background: #ddd;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .hero-content {
+    text-align: center;
   }
-}
-@media (max-width: 600px) {
+  
+  #home-heading {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 0; /* prevents inherited font size from affecting spans */
+  }
+  
+  #home-heading span {
+    display: inline-block;
+  }
+  
+  /* HERO WORDS */
+  .word-rebrand {
+    font-family: 'Red Rose', serif;
+    font-weight: 700;
+    font-size: 60px;
+    margin-right: 8px;
+  }
+  
+  .word-coming,
+  .word-soon {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+  }
+  
+  .word-coming {
+    margin-right: 6px;
+  }
+  
+  /* SUBTEXT */
+  .hero-subtext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+    line-height: 1.4;
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  /* NOTIFY BUTTON */
+  .notify-btn {
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid black;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s ease;
+    letter-spacing: 1px;
+  }
+  
+  .notify-btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  /* POPUP OVERLAY */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  /* POPUP BOX */
+  .popup-box {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 6px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.25s ease-out;
+  }
+  
+  .popup-box h2 {
+    font-family: 'Red Rose', serif;
+    margin-bottom: 10px;
+  }
+  
+  .popup-box p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* FORM INPUT */
+  .popup-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* BUTTONS */
+  .popup-submit,
+  .popup-close {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .popup-submit {
+    background: black;
+    color: white;
+  }
+  
+  .popup-close {
+    background: #ddd;
+  }
+  
+  /* ANIMATION */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* MOBILE HERO ADJUSTMENTS */
+  @media (max-width: 600px) {
     #home-heading {
       white-space: normal;
       font-size: 0;
+      padding: 0 20px;
     }
   
     #home-heading span {
@@ -173,6 +176,8 @@
       font-size: 16px;
       max-width: 90%;
       line-height: 1.4;
+      white-space: normal;
+      padding: 0 20px;
     }
   
     .home-hero {
