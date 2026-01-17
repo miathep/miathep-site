@@ -1,1 +1,72 @@
-<Title> Mia Thep Photography is currrently under construction!!</Title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+
+<body class="home">
+  <header>
+    <div class="wordmark">MIA THEP PHOTOGRAPHY</div>
+    <h1 class="subtitle">MISSOURI-BASED | EDITING SERVICE</h1>
+  </header>
+
+  <div class="home-hero">
+    <div class="hero-content">
+      <p id="home-heading">
+        <span class="word-rebrand">REBRAND</span>
+        <span class="word-coming">COMING</span>
+        <span class="word-soon">SOON</span>
+      </p>
+
+      <p class="hero-subtext">
+        A WHOLE NEW ERA IS IN THE WORKS, I CAN'T WAIT TO SHARE IT WITH YOU.
+      </p>
+
+      <button class="notify-btn" id="openPopup">NOTIFY ME</button>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h2>Get Notified</h2>
+      <p>Enter your email and I’ll let you know when everything goes live.</p>
+
+      <form id="notifyForm">
+        <input 
+          type="email" 
+          name="user_email"
+          id="user_email"
+          placeholder="Your email"
+          class="popup-input"
+          required
+        >
+
+        <input 
+          type="hidden"
+          name="date"
+          id="date"
+        >
+
+        <button type="submit" class="popup-submit">Submit</button>
+      </form>
+
+      <button class="popup-close" id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
