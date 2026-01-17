@@ -11,24 +11,24 @@ closePopup.onclick = () => {
   popup.style.display = "none";
 };
 
-// EMAILJS INITIALIZATION
-emailjs.init("YTEy1s4RLjS-gY_76Z"); // Your public key
+// FORM SUBMISSION (Zoho)
+document.getElementById("notifyForm").addEventListener("submit", function() {
+  const now = new Date();
 
-// FORM SUBMISSION
-document.getElementById("notifyForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+  const day = String(now.getDate()).padStart(2, "0");
+  const month = now.toLocaleString("en-US", { month: "short" });
+  const year = now.getFullYear();
+  document.getElementById("dateField").value = `${day}-${month}-${year}`;
 
-  // Insert current date/time into hidden field
-  document.getElementById("date").value = new Date().toLocaleString();
+  let hours = now.getHours();
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const ampm = hours >= 12 ? "PM" : "AM";
 
-  emailjs.sendForm("service_f3xsgc6", "template_dqlcb9e", this)
-    .then(() => {
-      alert("Woohoo! You’ll be notified when everything goes live.");
-      popup.style.display = "none";
-      this.reset();
-    })
-    .catch((error) => {
-      alert("Oops! Something went wrong.");
-      console.error("EmailJS Error:", error);
-    });
+  hours = hours % 12;
+  hours = hours ? hours : 12; //
+  hours = String(hours).padStart(2, "0");
+
+  document.getElementById("hourField").value = hours;
+  document.getElementById("minuteField").value = minutes;
+  document.getElementById("ampmField").value = ampm;
 });
