@@ -1,0 +1,179 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  /* HEADER */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+  
+  .header-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wordmark {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3.2px;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin: 0 0 6px 0;
+  }
+  
+  .subtitle {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #2c2c2c;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+  
+  /* NAVIGATION — FIXED */
+  .navigation-bar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  
+  .navigation-bar a {
+    text-decoration: none;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+  }
+  
+  .header-right .cta-button {
+    padding: 12px 18px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  /* POPUP OVERLAY */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    z-index: 9999;
+  }
+  
+  /* POPUP BOX — HARD-CENTERED */
+  .popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 30px 28px;
+    max-width: 420px;
+    width: 90%;
+    border-radius: 6px;
+    text-align: center;
+    animation: popupFade 0.25s ease-out;
+    box-sizing: border-box;
+  }
+  
+  /* POPUP TEXT */
+  #contactHeader h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  
+  #contactHeader p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  /* INPUTS */
+  .popup-input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding: 12px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+  }
+  
+  textarea.popup-input {
+    resize: none;
+    overflow: auto;
+  }
+  
+  /* SUBMIT BUTTON */
+  .popup-submit {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  
+  /* CLOSE BUTTON */
+  .popup-close {
+    margin-top: 18px;
+    background: transparent;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* THANK YOU MESSAGE */
+  #contactThankYou h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  
+  #contactThankYou p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #444;
+  }
+  
+  /* ANIMATION — FIXED TO PRESERVE CENTERING */
+  @keyframes popupFade {
+    from {
+      opacity: 0;
+      transform: translate(-50%, calc(-50% + 10px));
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
