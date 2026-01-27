@@ -29,3 +29,66 @@ header {
   margin-bottom: 2rem;
   letter-spacing: 2px;
 }
+
+/* Wedding Questionnaire Start */
+
+.questionnaire-page {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Inter, sans-serif;
+  background-color: #f5f1ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questionnaire-page .form-wrapper {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.questionnaire-page .step {
+  display: none;
+  animation: fade 0.4s ease;
+}
+
+.questionnaire-page .step.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FIRST SCREEN TEXT */
+.questionnaire-page .intro-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c2c2c;
+}
+
+.questionnaire-page .intro-subtitle {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* BUTTON */
+.questionnaire-page .startBtn {
+  width: auto;
+  padding: 14px 28px;
+  background: #5c3d2e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
