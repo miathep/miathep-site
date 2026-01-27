@@ -1,6 +1,3 @@
-/*NOTIFY POPUP (original)*/
-
-// POPUP LOGIC
 const popup = document.getElementById("popup");
 const openPopup = document.getElementById("openPopup");
 const closePopup = document.getElementById("closePopup");
@@ -17,7 +14,6 @@ if (closePopup) {
   };
 }
 
-// FORM SUBMISSION (Zoho + AJAX + Thank You Swap)
 const notifyForm = document.getElementById("notifyForm");
 
 if (notifyForm) {
@@ -25,8 +21,6 @@ if (notifyForm) {
     e.preventDefault();
 
     const now = new Date();
-
-    // Fill date fields
     const day = String(now.getDate()).padStart(2, "0");
     const month = now.toLocaleString("en-US", { month: "short" });
     const year = now.getFullYear();
@@ -35,7 +29,6 @@ if (notifyForm) {
     let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, "0");
     const ampm = hours >= 12 ? "PM" : "AM";
-
     hours = hours % 12;
     hours = hours ? hours : 12;
     hours = String(hours).padStart(2, "0");
@@ -44,53 +37,70 @@ if (notifyForm) {
     document.getElementById("minuteField").value = minutes;
     document.getElementById("ampmField").value = ampm;
 
-    // Build form data
     const formData = new FormData(this);
 
-    // Send to Zoho WITHOUT redirect
     fetch(this.action, {
       method: "POST",
       body: formData,
       mode: "no-cors"
     });
 
-    // Swap form → thank you message
     document.getElementById("notifyForm").style.display = "none";
     document.getElementById("thankYouMessage").style.display = "block";
 
-    // Hide the original heading + description
     const popupHeader = document.getElementById("popupHeader");
     if (popupHeader) popupHeader.style.display = "none";
   });
 }
 
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const mobileNav = document.getElementById("mobileNav");
 
-/* GET IN TOUCH POPUP */
+if (hamburgerBtn && mobileNav) {
+  hamburgerBtn.addEventListener("click", () => {
+    mobileNav.style.display =
+      mobileNav.style.display === "block" ? "none" : "block";
+  });
+}
 
 const contactPopup = document.getElementById("contactPopup");
-const openContactPopup = document.getElementById("openContactPopup");
+const openContactPopupDesktop = document.getElementById("openContactPopup");
+const openContactPopupMobile = document.getElementById("openContactPopupMobile");
 const closeContactPopup = document.getElementById("closeContactPopup");
 const contactForm = document.getElementById("contactForm");
 
-// OPEN CONTACT POPUP
-if (openContactPopup) {
-  openContactPopup.addEventListener("click", function(e) {
+if (openContactPopupDesktop && contactPopup) {
+  openContactPopupDesktop.addEventListener("click", function(e) {
     e.preventDefault();
     contactPopup.style.display = "flex";
   });
 }
 
-// CLOSE CONTACT POPUP
-if (closeContactPopup) {
+if (openContactPopupMobile && contactPopup) {
+  openContactPopupMobile.addEventListener("click", function(e) {
+    e.preventDefault();
+    if (mobileNav) {
+      mobileNav.style.display = "none";
+    }
+    contactPopup.style.display = "flex";
+  });
+}
+
+if (closeContactPopup && contactPopup) {
   closeContactPopup.addEventListener("click", function() {
     contactPopup.style.display = "none";
   });
 }
 
-// CONTACT FORM SUBMISSION
 if (contactForm) {
   contactForm.addEventListener("submit", function(e) {
     e.preventDefault();
+
+    fetch(contactForm.action, {
+      method: "POST",
+      body: new FormData(contactForm),
+      mode: "no-cors"
+    });
 
     document.getElementById("contactHeader").style.display = "none";
     document.getElementById("contactForm").style.display = "none";

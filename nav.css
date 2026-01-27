@@ -5,59 +5,57 @@ html, body {
     background-color: #fdfdfd;
     color: #333;
     overflow-x: hidden;
-  }
-  
-  /* HEADER */
-  .site-header {
+}
+
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-  }
-  
-  .header-left {
+}
+
+.header-left {
     display: flex;
     flex-direction: column;
-  }
-  
-  .wordmark {
+}
+
+.wordmark {
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 3.2px;
     font-weight: 600;
     color: #2c2c2c;
     margin: 0 0 6px 0;
-  }
-  
-  .subtitle {
+}
+
+.subtitle {
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #2c2c2c;
     letter-spacing: 2px;
     margin: 0;
-  }
-  
-  /* NAVIGATION — FIXED */
-  .navigation-bar ul {
+}
+
+.navigation-bar ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-  }
-  
-  .navigation-bar a {
+}
+
+.navigation-bar a {
     text-decoration: none;
     color: #333333;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 4px;
-  }
-  
-  .header-right .cta-button {
+}
+
+.cta-button {
     padding: 12px 18px;
     background-color: #000;
     color: #fff;
@@ -67,19 +65,22 @@ html, body {
     text-decoration: none;
     border-radius: 2px;
     cursor: pointer;
-  }
-  
-  /* POPUP OVERLAY */
-  .popup-overlay {
+}
+
+.hamburger,
+.mobile-nav {
+    display: none;
+}
+
+.popup-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.55);
     display: none;
     z-index: 9999;
-  }
-  
-  /* POPUP BOX — HARD-CENTERED */
-  .popup-box {
+}
+
+.popup-box {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -88,28 +89,26 @@ html, body {
     padding: 30px 28px;
     max-width: 420px;
     width: 90%;
-    border-radius: 6px;
+    border-radius: 4px;
     text-align: center;
     animation: popupFade 0.25s ease-out;
     box-sizing: border-box;
-  }
-  
-  /* POPUP TEXT */
-  #contactHeader h2 {
+}
+
+#contactHeader h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     margin-bottom: 6px;
-  }
-  
-  #contactHeader p {
+}
+
+#contactHeader p {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #444;
     margin-bottom: 20px;
-  }
-  
-  /* INPUTS */
-  .popup-input {
+}
+
+.popup-input {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -120,15 +119,14 @@ html, body {
     border-radius: 4px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-  }
-  
-  textarea.popup-input {
+}
+
+textarea.popup-input {
     resize: none;
     overflow: auto;
-  }
-  
-  /* SUBMIT BUTTON */
-  .popup-submit {
+}
+
+.popup-submit {
     width: 100%;
     padding: 12px;
     background: #000;
@@ -139,10 +137,9 @@ html, body {
     font-size: 12px;
     letter-spacing: 1px;
     cursor: pointer;
-  }
-  
-  /* CLOSE BUTTON */
-  .popup-close {
+}
+
+.popup-close {
     margin-top: 18px;
     background: transparent;
     border: none;
@@ -150,23 +147,21 @@ html, body {
     font-size: 12px;
     text-decoration: underline;
     cursor: pointer;
-  }
-  
-  /* THANK YOU MESSAGE */
-  #contactThankYou h2 {
+}
+
+#contactThankYou h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     margin-bottom: 6px;
-  }
-  
-  #contactThankYou p {
+}
+
+#contactThankYou p {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #444;
-  }
-  
-  /* ANIMATION — FIXED TO PRESERVE CENTERING */
-  @keyframes popupFade {
+}
+
+@keyframes popupFade {
     from {
       opacity: 0;
       transform: translate(-50%, calc(-50% + 10px));
@@ -175,5 +170,69 @@ html, body {
       opacity: 1;
       transform: translate(-50%, -50%);
     }
-  }
-  
+}
+
+@media (max-width: 600px) {
+
+    /* Hide desktop nav + desktop button */
+    .navigation-bar,
+    .header-right {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2px;
+        background: #333;
+        display: block;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px 0;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .mobile-nav a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        letter-spacing: 3px;
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .mobile-nav a.cta-button,
+    .mobile-nav a.cta-button:visited,
+    .mobile-nav a.cta-button:hover,
+    .mobile-nav a.cta-button:active {
+        display: inline-block;
+        margin-top: 10px;
+        color: #fff;
+    }
+}

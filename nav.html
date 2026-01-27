@@ -31,7 +31,24 @@
     <div class="header-right">
       <a href="#" class="cta-button" id="openContactPopup">GET IN TOUCH</a>
     </div>
+
+    <button class="hamburger" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="/Users/miathep/Documents/miathep-site/index.html">HOME</a></li>
+      <li><a href="/pages/about.html">ABOUT</a></li>
+      <li><a href="/pages/pricing.html">SERVICES</a></li>
+      <li><a href="/pages/blog.html">BLOG</a></li>
+
+      <li><a href="#" id="openContactPopupMobile" class="cta-button">GET IN TOUCH</a></li>
+    </ul>
+  </div>
 
   <div class="popup-overlay" id="contactPopup">
     <div class="popup-box">
@@ -40,10 +57,21 @@
         <p>Send me a message and I’ll get back to you soon.</p>
       </div>
 
-      <form id="contactForm">
-        <input type="text" name="Name" placeholder="Your name" class="popup-input" required>
+      <!-- UPDATED CONTACT FORM -->
+      <form id="contactForm"
+            action="https://forms.zohopublic.com/miathepphotography/form/Contact/formperma/dQpwjs8Ar83-VTuUzwgdMaTOuFAVPEcswGUoIuQdn10/htmlRecords/submit"
+            method="POST">
+
+        <!-- Required Zoho hidden fields -->
+        <input type="hidden" name="zf_referrer_name" value="">
+        <input type="hidden" name="zf_redirect_url" value="">
+        <input type="hidden" name="zc_gad" value="">
+
+        <!-- Your custom fields mapped to Zoho -->
+        <input type="text" name="SingleLine" placeholder="Your name" class="popup-input" required>
         <input type="email" name="Email" placeholder="Your email" class="popup-input" required>
-        <textarea name="Message" placeholder="Your message" class="popup-input" rows="4" required></textarea>
+        <textarea name="MultiLine" placeholder="Your message" class="popup-input" rows="4" required></textarea>
+
         <button type="submit" class="popup-submit">Send Message</button>
       </form>
 

@@ -2,61 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MIA THEP PHOTOGRAPHY</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../nav.css">
+  <title>Test Page</title>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="header-left">
-      <div class="wordmark">MIA THEP PHOTOGRAPHY</div>
-      <h1 class="subtitle">MISSOURI-BASED | EDITING SERVICE</h1>
-    </div>
+  <!-- Navigation Start -->
+  <div id="nav-placeholder"></div>
 
-    <nav class="navigation-bar">
-      <ul>
-        <li><a href="/Users/miathep/Documents/miathep-site/index.html">HOME</a></li>
-        <li><a href="/pages/about.html">ABOUT</a></li>
-        <li><a href="/pages/pricing.html">SERVICES</a></li>
-        <li><a href="/pages/blog.html">BLOG</a></li>
-      </ul>
-    </nav>
+  <script>
+    fetch("../nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
 
-    <div class="header-right">
-      <a href="#" class="cta-button" id="openContactPopup">GET IN TOUCH</a>
-    </div>
-  </header>
+        // Attach popup event listeners AFTER nav loads
+        const openBtn = document.getElementById("openContactPopup");
+        const openBtnMobile = document.getElementById("openContactPopupMobile");
+        const closeBtn = document.getElementById("closeContactPopup");
+        const popup = document.getElementById("contactPopup");
 
+        // Desktop button
+        if (openBtn) {
+          openBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            popup.style.display = "flex";
+          });
+        }
+
+        // Mobile button — close dropdown first
+        if (openBtnMobile) {
+          openBtnMobile.addEventListener("click", function(e) {
+            e.preventDefault();
+            const mobileNav = document.getElementById("mobileNav");
+            if (mobileNav) mobileNav.style.display = "none";
+            popup.style.display = "flex";
+          });
+        }
+
+        // Close popup
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function() {
+            popup.style.display = "none";
+          });
+        }
+
+        // Hamburger menu
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const mobileNav = document.getElementById("mobileNav");
+
+        if (hamburgerBtn) {
+          hamburgerBtn.addEventListener("click", () => {
+            mobileNav.style.display =
+              mobileNav.style.display === "block" ? "none" : "block";
+          });
+        }
+      });
+  </script>
+  <!-- Navigation End -->
   <div class="popup-overlay" id="contactPopup">
-    <div class="popup-box">
-      <div id="contactHeader">
-        <h2>Get In Touch</h2>
-        <p>Send me a message and I’ll get back to you soon.</p>
-      </div>
-
-      <form id="contactForm">
-        <input type="text" name="Name" placeholder="Your name" class="popup-input" required>
-        <input type="email" name="Email" placeholder="Your email" class="popup-input" required>
-        <textarea name="Message" placeholder="Your message" class="popup-input" rows="4" required></textarea>
-        <button type="submit" class="popup-submit">Send Message</button>
-      </form>
-
-      <div id="contactThankYou" style="display:none;">
-        <h2>Thank you!</h2>
-        <p>Your message has been sent.</p>
-      </div>
-
-      <button class="popup-close" id="closeContactPopup">Close</button>
-    </div>
   </div>
-
-  <script src="../script.js"></script>
 
 </body>
 </html>
