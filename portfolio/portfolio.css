@@ -7,16 +7,18 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Minimal header with only wordmark + subtitle */
 .site-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;   /* centers the wordmark block */
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2rem 1rem;   /* more breathing room */
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
+  align-items: center;       /* centers text under each other */
 }
 
 .wordmark {
@@ -26,6 +28,7 @@ html, body {
   font-weight: 600;
   color: #2c2c2c;
   margin: 0 0 6px 0;
+  text-align: center;
 }
 
 .subtitle {
@@ -35,34 +38,42 @@ html, body {
   color: #2c2c2c;
   letter-spacing: 2px;
   margin: 0;
+  text-align: center;
 }
 
+/* Portfolio Sub Menu — centered + pushed further down */
 .portfolio-menu {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0 3rem;
-    flex-wrap: wrap;
-  }
-  
-  .filter-btn {
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 0.5rem 0;
-    color: #444;
-    transition: color 0.2s ease, border-bottom 0.2s ease;
-    border-bottom: 2px solid transparent;
-  }
-  
-  .filter-btn:hover {
-    color: #000;
-  }
-  
-  .filter-btn.active {
-    color: #000;
-    border-bottom: 2px solid #000;
-  }
-  
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  margin-top: 4rem;     /* pushes it down ~3 lines */
+  margin-bottom: 3rem;
+
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  color: #444;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.filter-btn:hover {
+  color: #000;
+}
+
+.filter-btn.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
