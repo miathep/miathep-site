@@ -1,4 +1,42 @@
-/* Portfolio Sub Menu */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.wordmark {
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 3.2px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0 0 6px 0;
+}
+
+.subtitle {
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #2c2c2c;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
 .portfolio-menu {
     display: flex;
     justify-content: center;
