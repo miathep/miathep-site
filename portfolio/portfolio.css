@@ -41,25 +41,24 @@ html, body {
   text-align: center;
 }
 
-/* Portfolio Sub Menu — centered on the page + pushed further down */
+/* Portfolio Sub Menu — fully centered + pushed further down */
 .portfolio-menu {
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
 
   display: flex;
-  justify-content: center;
-  align-items: center;         /* ensures perfect centering */
+  justify-content: center;     /* centers horizontally */
+  align-items: center;         /* centers vertically within the row */
   flex-wrap: wrap;
   gap: 2rem;
 
-  margin-top: 5rem;            /* pushes it down ~3 lines */
-  margin-bottom: 3rem;
+  width: 100%;                 /* ensures full-page centering */
+  max-width: 100%;
+  text-align: center;
 
+  margin: 5rem auto 3rem;      /* centers the block + pushes it down */
   padding-bottom: 1rem;
   border-bottom: 1px solid #e5e5e5;
-
-  width: 100%;                 /* ensures full-page centering */
-  text-align: center;
 }
 
 .filter-btn {
