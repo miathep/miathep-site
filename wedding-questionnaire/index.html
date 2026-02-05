@@ -13,8 +13,8 @@
 
     <form id="weddingForm">
 
-      <!-- FIRST SCREEN -->
-      <div class="step active" data-step="start">
+      <!-- INTRO SCREEN (not a question) -->
+      <div class="intro-screen active" data-question="start">
         <h1 class="intro-title">Let’s get to know your day!</h1>
         <p class="intro-subtitle">
           Answer a few quick questions so I can understand your wedding vision.
@@ -23,11 +23,11 @@
         <button type="button" class="startBtn">Let’s get started</button>
       </div>
 
-      <!-- NEXT QUESTION -->
-      <div class="step" data-step="1">
-        <h2 class="step-title">I want to get your titles right!</h2>
-    
-        <label for="roleSelect" class="question">How do you identify as a couple?</label>
+      <!-- QUESTION 1 -->
+      <div class="question-1" data-question="1">
+        <h2 class="question-title">I want to get your titles right!</h2>
+
+        <label for="roleSelect" class="question-text">How do you identify as a couple?</label>
         <select name="Role" id="roleSelect" required>
           <option value="">Select one</option>
           <option value="Bride-Groom">Bride + Groom</option>
@@ -36,13 +36,11 @@
           <option value="Partner-Non-Binary">Partners/Non-Binary</option>
         </select>
       </div>
-      
 
     </form>
 
   </div>
 
-  <!-- Corrected script path -->
   <script src="../questionnaire.js"></script>
 </body>
 </html>

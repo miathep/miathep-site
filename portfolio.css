@@ -1,0 +1,30 @@
+/* Portfolio Sub Menu */
+.portfolio-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    color: #444;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .filter-btn:hover {
+    color: #000;
+  }
+  
+  .filter-btn.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+  
