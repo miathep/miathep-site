@@ -7,18 +7,19 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Minimal header with only wordmark + subtitle */
+/* Header now stacks items vertically and aligns them to the start (left) */
 .site-header {
   display: flex;
-  justify-content: center;     /* centers the wordmark block */
-  align-items: center;
-  padding: 2rem 2rem 1rem;     /* breathing room above the sub menu */
+  flex-direction: column;
+  align-items: flex-start;     /* Aligns wordmark and subtitle to the left */
+  padding: 2rem 2rem 1rem;
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
-  align-items: center;         /* centers text under each other */
+  align-items: flex-start;     /* Ensures text stacks aligned to the left */
+  text-align: left;
 }
 
 .wordmark {
@@ -28,7 +29,6 @@ html, body {
   font-weight: 600;
   color: #2c2c2c;
   margin: 0 0 6px 0;
-  text-align: center;
 }
 
 .subtitle {
@@ -38,29 +38,26 @@ html, body {
   color: #2c2c2c;
   letter-spacing: 2px;
   margin: 0;
-  text-align: center;
 }
 
-/* Portfolio Sub Menu — forced to center on the page */
+/* Portfolio Sub Menu — centered independently of the header alignment */
 .portfolio-menu {
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
 
   display: flex;
-  justify-content: center;
+  justify-content: center;    /* This centers the buttons on the page */
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 
-  margin-top: 5rem;            /* pushes it down ~3 lines */
+  width: 100%;                /* Takes full width to allow internal centering */
+  margin-top: 5rem;
   margin-bottom: 3rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e5e5e5;
-
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%); /* hard-centers the whole block */
-  text-align: center;
+  
+  /* Removed position: relative and transform to let Flexbox handle it */
 }
 
 .filter-btn {
