@@ -4,18 +4,19 @@ html, body {
   font-family: Arial, sans-serif;
   background-color: #fdfdfd;
   color: #333;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Important: prevents scrollbars from 100vw width */
 }
 
-/* 1. Aligns Wordmark and Subtitle to the Left */
+/* 1. Header remains left-aligned */
 .site-header {
-  padding: 2rem 2rem 0; /* Space at top and sides */
+  padding: 2rem 2rem 0; 
+  display: block; /* Ensure it's a block container */
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Keeps text left-aligned */
+  align-items: flex-start;
   text-align: left;
 }
 
@@ -37,22 +38,30 @@ html, body {
   margin: 0;
 }
 
-/* 2. Centers the Sub-Menu on the Page */
+/* 2. THE FIX: Break out of the header padding to center on the screen */
 .portfolio-menu {
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
 
   display: flex;
-  justify-content: center; /* Centers buttons horizontally */
+  justify-content: center; /* Centers buttons inside the menu */
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 
-  margin-top: 4rem;        /* Distance from the header */
+  /* Force the menu to span the full viewport width and ignore parent padding */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  margin-top: 5rem;
   margin-bottom: 3rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e5e5e5;
-  width: 100%;             /* Ensures it spans the whole screen */
+  box-sizing: border-box;
 }
 
 .filter-btn {
