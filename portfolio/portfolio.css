@@ -35,16 +35,16 @@ html, body {
   margin: 0;
 }
 
-/* --- SUB-MENU (CENTERED) --- */
+/* --- SUB-MENU (CENTERED & INDEPENDENT) --- */
 .isolated-portfolio-menu {
   display: flex;
-  justify-content: center; /* Forces buttons to the middle */
+  justify-content: center; /* This is what centers the buttons */
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
 
   width: 100%;
-  margin: 60px 0 30px 0;   /* Space between header and menu */
+  margin: 60px 0 30px 0;   
   padding-bottom: 15px;
   border-bottom: 1px solid #e5e5e5;
   
@@ -56,20 +56,24 @@ html, body {
   border: none;
   padding: 8px 0;
   cursor: pointer;
-  color: #444;
+  color: #888;             /* Slightly lighter color for non-active items */
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   transition: all 0.3s ease;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid transparent; /* Placeholder for the underline */
 }
 
+/* Hover effect */
 .menu-item:hover {
   color: #000;
 }
 
+/* --- THE ACTIVE STATE --- */
+/* This rule is triggered when JS adds the 'active' class */
 .menu-item.active {
-  color: #000;
-  border-bottom: 2px solid #000;
+  color: #000 !important;
+  border-bottom: 2px solid #000 !important;
+  font-weight: 600;
 }
