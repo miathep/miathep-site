@@ -1,24 +1,19 @@
+/* --- GLOBAL --- */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
   background-color: #fdfdfd;
-  color: #333;
   overflow-x: hidden;
 }
 
-/* 1. Use Grid to allow children to have different alignment rules */
+/* --- HEADER (LEFT ALIGNED) --- */
 .site-header {
-  display: grid;
-  grid-template-columns: 100%; 
   padding: 2rem 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-left {
-  /* This stays pinned to the left of the grid */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   text-align: left;
 }
 
@@ -28,7 +23,7 @@ html, body {
   letter-spacing: 3.2px;
   font-weight: 600;
   color: #2c2c2c;
-  margin: 0 0 6px 0;
+  margin-bottom: 6px;
 }
 
 .subtitle {
@@ -40,47 +35,41 @@ html, body {
   margin: 0;
 }
 
-/* 2. THE FIX: Center the menu content within the full-width grid row */
-.portfolio-menu {
-  font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
-
+/* --- SUB-MENU (CENTERED) --- */
+.isolated-portfolio-menu {
   display: flex;
-  justify-content: center; /* This centers the buttons inside the nav bar */
+  justify-content: center; /* Forces buttons to the middle */
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 30px;
 
-  /* Since it's in a 100% grid column, this now centers perfectly */
   width: 100%;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
+  margin: 60px 0 30px 0;   /* Space between header and menu */
+  padding-bottom: 15px;
   border-bottom: 1px solid #e5e5e5;
   
-  /* Resetting any flex-start inheritance from parent */
-  justify-self: center; 
+  font-family: 'Montserrat', sans-serif;
 }
 
-.filter-btn {
+.menu-item {
   background: none;
   border: none;
-  font-size: 1.1rem;
-  font-weight: 500;
+  padding: 8px 0;
   cursor: pointer;
-  padding: 0.5rem 0;
   color: #444;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
-  border-bottom: 2px solid transparent;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
-.filter-btn:hover {
+.menu-item:hover {
   color: #000;
 }
 
-.filter-btn.active {
+.menu-item.active {
   color: #000;
   border-bottom: 2px solid #000;
 }
