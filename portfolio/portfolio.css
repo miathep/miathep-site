@@ -7,18 +7,19 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Header now stacks items vertically and aligns them to the start (left) */
+/* 1. Header is the anchor for the menu */
 .site-header {
+  position: relative;          /* Anchor point for absolute children */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;     /* Aligns wordmark and subtitle to the left */
+  align-items: flex-start;     /* Wordmark/Subtitle stay left */
   padding: 2rem 2rem 1rem;
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;     /* Ensures text stacks aligned to the left */
+  align-items: flex-start;
   text-align: left;
 }
 
@@ -40,24 +41,29 @@ html, body {
   margin: 0;
 }
 
-/* Portfolio Sub Menu — centered independently of the header alignment */
+/* 2. THE FIX: Absolute position the menu to center it precisely */
 .portfolio-menu {
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
 
   display: flex;
-  justify-content: center;    /* This centers the buttons on the page */
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 
-  width: 100%;                /* Takes full width to allow internal centering */
-  margin-top: 5rem;
-  margin-bottom: 3rem;
+  /* Centering Logic using Absolute Positioning */
+  position: absolute;
+  top: 100%;                  /* Positions it below the header content */
+  left: 50%;
+  transform: translateX(-50%); /* Shifts it back by half its own width */
+  
+  width: 90%;                 /* Width of the menu container */
+  max-width: 1200px;          /* Prevents it from getting too wide */
+  margin-top: 2rem;           /* Spacing below the header */
   padding-bottom: 1rem;
   border-bottom: 1px solid #e5e5e5;
-  
-  /* Removed position: relative and transform to let Flexbox handle it */
+  text-align: center;
 }
 
 .filter-btn {
